@@ -1,3 +1,4 @@
+
 #!/bin/bash -xe
 
 echo
@@ -16,3 +17,6 @@ softwareupdate -a -i true
 
 echo "CHIA: Installing Homebrew if it isn't already installed"
 which brew || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+echo "CHIA: Installing/updating Homebrew taps, formulae and casks"
+brew bundle

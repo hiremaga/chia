@@ -10,3 +10,6 @@ echo
 
 echo "CHIA: Installing Xcode Command Line Tools if it isn't already installed"
 xcode-select --install || true
+
+echo "CHIA: Updating OS X"
+softwareupdate -a -i true

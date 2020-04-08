@@ -1,3 +1,16 @@
 # chia
 
-Seeds for an OSX Sierra developer workstation
+OSX developer workstation
+
+## First time
+
+```
+curl https://raw.githubusercontent.com/hiremaga/chia/master/chia.sh | bash
+```
+
+## Subsequent runs
+
+```
+cd ~/workspace/chia
+bash chia.sh
+```

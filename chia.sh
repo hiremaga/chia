@@ -9,3 +9,13 @@ softwareupdate -a -i true
 
 echo "CHIA: Installing Homebrew if it isn't already installed"
 which brew || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+if [ ! -d ~/workspace/chia ]; then
+  mkdir -p ~/workspace
+  pushd ~/workspace
+    git clone https://github.com/hiremaga/chia.git
+    pushd chia
+      brew bundle
+    popd
+  popd
+fi

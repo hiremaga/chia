@@ -13,5 +13,6 @@ fi
 
 pushd ~/workspace/chia
   source macos-settings/00-everything.sh
+  stow -t $HOME dotfiles
   brew bundle
 popd

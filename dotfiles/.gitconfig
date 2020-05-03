@@ -1,0 +1,12 @@
+[alias]
+st = status
+ci = commit
+co = checkout
+
+[url "git@github.com:"]
+pushInsteadOf = https://github.com/
+pushInsteadOf = git://github.com/
+
+[user]
+name = Abhi Hiremagalur
+email = abhijit@hiremaga.com

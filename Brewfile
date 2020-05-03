@@ -1,9 +1,11 @@
 tap 'git-duet/tap'
 tap 'kryptco/tap'
 
+cask 'authy'
 cask 'docker'
 cask 'flycut'
 cask 'google-chrome'
+cask 'google-backup-and-sync'
 cask 'iterm2'
 cask 'spectacle'
 cask 'spotify'

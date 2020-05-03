@@ -10,4 +10,4 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 source macos-settings/dock.sh
 source macos-settings/keyboard.sh
-source macos-settings/spectacle.sh
+source macos-settings/spectacle-shortcuts.sh

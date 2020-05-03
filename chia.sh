@@ -1,4 +1,3 @@
-
 #!/bin/bash -ex
 
 xcode-select --install || true
@@ -13,5 +12,6 @@ if [ ! -d ~/workspace/chia ]; then
 fi
 
 pushd ~/workspace/chia
+  source macos-settings/00-everything.sh
   brew bundle
 popd

@@ -1,6 +1,7 @@
 tap 'git-duet/tap'
 tap 'kryptco/tap'
 
+cask 'android-studio'
 cask 'authy'
 cask 'docker'
 cask 'flycut'

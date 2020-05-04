@@ -80,6 +80,12 @@
         "options": {
           "full_name": "shiftit"
         }
+      },
+      "android-studio": {
+        "version": "3.6.3.0,192.6392135",
+        "options": {
+          "full_name": "android-studio"
+        }
       }
     },
     "brew": {

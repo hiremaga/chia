@@ -12,8 +12,9 @@ if [ ! -d ~/workspace/chia ]; then
 fi
 
 pushd ~/workspace/chia
-  source macos-settings/00-everything.sh
-  stow -t $HOME dotfiles
   brew bundle cleanup -f
   brew bundle install
+
+  source macos-settings/00-everything.sh
+  stow -t $HOME dotfiles
 popd

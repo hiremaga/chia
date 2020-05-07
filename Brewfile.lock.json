@@ -86,6 +86,12 @@
         "options": {
           "full_name": "android-studio"
         }
+      },
+      "slack": {
+        "version": "4.5.0",
+        "options": {
+          "full_name": "slack"
+        }
       }
     },
     "brew": {

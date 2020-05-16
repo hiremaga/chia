@@ -16,6 +16,7 @@ cask 'zoomus'
 
 brew 'direnv'
 brew 'go'
+brew 'hub'
 brew 'jq'
 brew 'kind'
 brew 'kubectl'

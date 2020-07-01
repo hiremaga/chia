@@ -98,6 +98,12 @@
         "options": {
           "full_name": "grammarly"
         }
+      },
+      "discord": {
+        "version": "0.0.257",
+        "options": {
+          "full_name": "discord"
+        }
       }
     },
     "brew": {

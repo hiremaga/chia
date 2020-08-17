@@ -1,6 +1,6 @@
 # chia
 
-OSX developer workstation
+Seeds for a healthy OSX developer workstation
 
 ## First time
 

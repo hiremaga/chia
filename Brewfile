@@ -17,6 +17,7 @@ cask 'visual-studio-code'
 cask 'zoomus'
 
 brew 'direnv'
+brew 'exercism'
 brew 'go'
 brew 'hub'
 brew 'jq'

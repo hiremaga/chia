@@ -10,3 +10,8 @@ pushInsteadOf = git://github.com/
 [user]
 name = Abhi Hiremagalur
 email = abhijit@hiremaga.com
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f

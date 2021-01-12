@@ -28,6 +28,15 @@ pushd ~/workspace/chia
   brew bundle cleanup -f
   brew bundle install
 
-  source macos-settings/00-everything.sh
+  echo 'installing dotfiles...'
   stow -t $HOME dotfiles
+  echo 'installed dotfiles.'
+
+  echo 'installing settings...'
+  source macos-settings/00-everything.sh
+  echo 'installed settings.'
+
+  echo 'installing tools...'
+  source macos-tools/00-everything.sh
+  echo 'installing tools.'
 popd

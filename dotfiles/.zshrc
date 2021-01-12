@@ -8,3 +8,6 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 export PATH="$PATH:$HOME/workspace/flutter/bin"
 
 alias nproc="sysctl -n hw.logicalcpu"
+
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh

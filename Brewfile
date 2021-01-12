@@ -14,7 +14,6 @@ cask 'shiftit'
 cask 'slack'
 cask 'spotify'
 cask 'visual-studio-code'
-cask 'zoomus'
 
 brew 'direnv'
 brew 'exercism'

@@ -649,31 +649,6 @@
           }
         }
       },
-      "node": {
-        "version": "15.5.1",
-        "bottle": {
-          "cellar": ":any",
-          "prefix": "/usr/local",
-          "files": {
-            "big_sur": {
-              "url": "https://homebrew.bintray.com/bottles/node-15.5.1.big_sur.bottle.tar.gz",
-              "sha256": "15f527955cf7991efe94fa3b20903b67b947a83fb99f42ec28bb4a359bc5ca4a"
-            },
-            "arm64_big_sur": {
-              "url": "https://homebrew.bintray.com/bottles/node-15.5.1.arm64_big_sur.bottle.tar.gz",
-              "sha256": "fa6536f4745415f44511db24369884e6c47937f18ea3824860091b48f737aecd"
-            },
-            "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/node-15.5.1.catalina.bottle.tar.gz",
-              "sha256": "bb48a61323732fd7dce43362efa9b36d17c0ad6bf4ef31ebde8d74e20db6b4fd"
-            },
-            "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/node-15.5.1.mojave.bottle.tar.gz",
-              "sha256": "95eae1353336cae701044efba6a0872eb8264fbbe90fc316dbcdfed3813df842"
-            }
-          }
-        }
-      },
       "minikube": {
         "version": "1.16.0",
         "bottle": {
@@ -695,9 +670,30 @@
           }
         }
       },
-      "yarn": {
-        "version": "1.22.10",
-        "bottle": false
+      "node@14": {
+        "version": "14.15.4",
+        "bottle": {
+          "cellar": ":any",
+          "prefix": "/usr/local",
+          "files": {
+            "big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/node%4014-14.15.4.big_sur.bottle.tar.gz",
+              "sha256": "8ea277e44a9caf1ec786e6d587a1f354800a7701ec36a013a677e67dcbbf1ffd"
+            },
+            "arm64_big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/node%4014-14.15.4.arm64_big_sur.bottle.tar.gz",
+              "sha256": "7692419a90f930e258d15e8a2935c39c09468a874b4b125527044c926dae03cf"
+            },
+            "catalina": {
+              "url": "https://homebrew.bintray.com/bottles/node%4014-14.15.4.catalina.bottle.tar.gz",
+              "sha256": "c7dad357f47ccca70b7f7e389df005409859bdc382421bae08672a5f07913308"
+            },
+            "mojave": {
+              "url": "https://homebrew.bintray.com/bottles/node%4014-14.15.4.mojave.bottle.tar.gz",
+              "sha256": "719ddeee6070d1afdac6d04c1e4977e175cc1dfec3e19db5c8c75cacfc13de6b"
+            }
+          }
+        }
       }
     }
   },
@@ -706,7 +702,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.7.3",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "d18764b792a5abcb643f8e685432858dc335c9a5",
+        "Homebrew/homebrew-core": "6999718aee3dbdce03b86ee7c3e469ee93900593",
         "CLT": "1103.0.32.62",
         "Xcode": "10.1",
         "macOS": "10.15.7"

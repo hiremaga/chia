@@ -694,6 +694,27 @@
             }
           }
         }
+      },
+      "octant": {
+        "version": "0.16.3",
+        "bottle": {
+          "cellar": ":any_skip_relocation",
+          "prefix": "/usr/local",
+          "files": {
+            "big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/octant-0.16.3.big_sur.bottle.tar.gz",
+              "sha256": "af07a62007bf7754898735f4b1f1696afe2db439ea152eb8bfbb48a1ccecec08"
+            },
+            "catalina": {
+              "url": "https://homebrew.bintray.com/bottles/octant-0.16.3.catalina.bottle.tar.gz",
+              "sha256": "bbdfdf1126ec8472748d949aefc383911d221fdfe44342b4ec73451b3ea12461"
+            },
+            "mojave": {
+              "url": "https://homebrew.bintray.com/bottles/octant-0.16.3.mojave.bottle.tar.gz",
+              "sha256": "2b94f3e031d6def218b024f74d1a55c3be096beac207e434dc425d43d1cb99f9"
+            }
+          }
+        }
       }
     }
   },

@@ -3,6 +3,7 @@ tap 'kryptco/tap'
 
 cask 'android-studio'
 cask 'authy'
+cask 'chromedriver'
 cask 'discord'
 cask 'docker'
 cask 'flycut'

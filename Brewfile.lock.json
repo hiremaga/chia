@@ -12,6 +12,9 @@
       },
       "homebrew/core": {
         "revision": "0b738b77a5a13a66a52d76d34c4f608b719e0485"
+      },
+      "vmware-tanzu/carvel": {
+        "revision": "d1eac28fe540c7aeb4dea1f304620fd5c8355134"
       }
     },
     "cask": {
@@ -100,7 +103,7 @@
         }
       },
       "chromedriver": {
-        "version": null,
+        "version": "88.0.4324.96",
         "options": {
           "full_name": "chromedriver"
         }
@@ -717,6 +720,18 @@
             }
           }
         }
+      },
+      "imgpkg": {
+        "version": "v0.4.0",
+        "bottle": false
+      },
+      "kapp": {
+        "version": "v0.35.0",
+        "bottle": false
+      },
+      "kbld": {
+        "version": "v0.29.0",
+        "bottle": false
       }
     }
   },
@@ -727,7 +742,7 @@
         "HOMEBREW_PREFIX": "/usr/local",
         "Homebrew/homebrew-core": "d0a54c43be9e70b7e641b3bda8b96e32c35826f8",
         "CLT": "1103.0.32.62",
-        "Xcode": "10.1",
+        "Xcode": "12.4",
         "macOS": "10.15.7"
       }
     }

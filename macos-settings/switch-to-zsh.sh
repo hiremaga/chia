@@ -1,1 +1,1 @@
-chsh -s /bin/zsh
+[[ $(dscl . -read ~/ UserShell) =~ zsh ]] || chsh -s /bin/zsh

@@ -33,7 +33,7 @@ brew 'lastpass-cli'
 brew 'minikube'
 brew 'node@14'
 brew 'octant'
-brew 'postgresql'
+brew 'postgresql', restart_service: true
 brew 'pstree'
 brew 'ruby-install'
 brew 'stow'

@@ -853,7 +853,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "3.0.1",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "8609a2455834b67937a1604f3e5d210f5669dbd1",
+        "Homebrew/homebrew-core": "988d1065477aac8d07b63b808175dcc9df80e084",
         "CLT": "1103.0.32.62",
         "Xcode": "12.4",
         "macOS": "10.15.7"

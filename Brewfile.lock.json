@@ -845,6 +845,10 @@
         "options": {
           "restart_service": true
         }
+      },
+      "nvm": {
+        "version": "0.37.2",
+        "bottle": false
       }
     }
   },

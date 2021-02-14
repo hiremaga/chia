@@ -31,7 +31,7 @@ brew 'kind'
 brew 'kubectl'
 brew 'lastpass-cli'
 brew 'minikube'
-brew 'node@14'
+brew 'nvm'
 brew 'octant'
 brew 'postgresql', restart_service: true
 brew 'pstree'

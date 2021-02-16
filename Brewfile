@@ -37,6 +37,7 @@ brew 'postgresql', restart_service: true
 brew 'pstree'
 brew 'ruby-install'
 brew 'stow'
+brew 'telnet'
 brew 'the_platinum_searcher'
 brew 'tmux'
 brew 'tree'

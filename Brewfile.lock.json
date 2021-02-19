@@ -31,7 +31,7 @@
         }
       },
       "google-chrome": {
-        "version": "88.0.4324.150,4324.150",
+        "version": "88.0.4324.182,4324.182",
         "options": {
           "full_name": "google-chrome"
         }
@@ -85,7 +85,7 @@
         }
       },
       "slack": {
-        "version": "4.12.2",
+        "version": "4.13.0",
         "options": {
           "full_name": "slack"
         }
@@ -266,7 +266,7 @@
         }
       },
       "kubectl": {
-        "version": "1.20.2",
+        "version": "1.20.3",
         "bottle": {
           "rebuild": 0,
           "cellar": ":any_skip_relocation",
@@ -274,16 +274,16 @@
           "root_url": "https://homebrew.bintray.com/bottles",
           "files": {
             "big_sur": {
-              "url": "https://homebrew.bintray.com/bottles/kubernetes-cli-1.20.2.big_sur.bottle.tar.gz",
-              "sha256": "58049cbdcae1b674d62aa1ad4cb5d9b667ac01080574c0fe5c9e126f8fde1eb6"
+              "url": "https://homebrew.bintray.com/bottles/kubernetes-cli-1.20.3.big_sur.bottle.tar.gz",
+              "sha256": "aff234987a76c0f36c39afd56553f9422abffbd70819c8daf7895f1c052b0df2"
             },
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/kubernetes-cli-1.20.2.catalina.bottle.tar.gz",
-              "sha256": "a01f3291281baa941148b50d733278059c13db4da4e0480019fd841eeb441322"
+              "url": "https://homebrew.bintray.com/bottles/kubernetes-cli-1.20.3.catalina.bottle.tar.gz",
+              "sha256": "0d221fc35dc22a59c5bd3642933fcb57f8d41e343119ec6c840ccbf4194508fb"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/kubernetes-cli-1.20.2.mojave.bottle.tar.gz",
-              "sha256": "22d9642cbe12a6284e4285e395f3d6e7c7fa477600dc8d31d00d6da88beee33f"
+              "url": "https://homebrew.bintray.com/bottles/kubernetes-cli-1.20.3.mojave.bottle.tar.gz",
+              "sha256": "6c244de68b7674db81ab1756789b6a547e39b4e9d4ba25e509db16c5a3e0727d"
             }
           }
         }
@@ -886,6 +886,29 @@
             }
           }
         }
+      },
+      "hyperkit": {
+        "version": "0.20200908",
+        "bottle": {
+          "rebuild": 0,
+          "cellar": ":any_skip_relocation",
+          "prefix": "/usr/local",
+          "root_url": "https://homebrew.bintray.com/bottles",
+          "files": {
+            "catalina": {
+              "url": "https://homebrew.bintray.com/bottles/hyperkit-0.20200908.catalina.bottle.tar.gz",
+              "sha256": "26a203b17733ff5166d8c31069e3ecd5af15c74448a51d8b682689cb07e911e8"
+            },
+            "mojave": {
+              "url": "https://homebrew.bintray.com/bottles/hyperkit-0.20200908.mojave.bottle.tar.gz",
+              "sha256": "f662bb10b9bab8a2f3b8e92f51b2fae3f1d8d24310732cc77a164e63d7eaa5d2"
+            },
+            "high_sierra": {
+              "url": "https://homebrew.bintray.com/bottles/hyperkit-0.20200908.high_sierra.bottle.tar.gz",
+              "sha256": "f057fe7b3856421d0fdf1df3d9981e0729ee77c27ed3d4cb918e9523f7d5d9be"
+            }
+          }
+        }
       }
     }
   },
@@ -894,7 +917,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "3.0.1",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "b9a6fd6791dab17e8b3137a2a73d311a70ffb05f",
+        "Homebrew/homebrew-core": "218c38888d12176c0ed8779e6d0f9d2f1aab27d4",
         "CLT": "1103.0.32.62",
         "Xcode": "12.4",
         "macOS": "10.15.7"

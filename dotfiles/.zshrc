@@ -5,6 +5,8 @@ zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$PATH
 export PATH="$PATH:$HOME/workspace/flutter/bin"
 
 alias nproc="sysctl -n hw.logicalcpu"

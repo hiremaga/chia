@@ -20,3 +20,5 @@ export NVM_DIR="$HOME/.nvm"
 
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+
+export ERL_AFLAGS="-kernel shell_history enabled"

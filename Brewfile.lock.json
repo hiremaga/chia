@@ -15,6 +15,9 @@
       },
       "vmware-tanzu/carvel": {
         "revision": "8b48a097afa2edb8f6bd44186b7e5073c2bdb028"
+      },
+      "tilt-dev/tap": {
+        "revision": "9f680a7a48a27a477c80d7b879427a6386d85aa9"
       }
     },
     "cask": {
@@ -912,6 +915,10 @@
       },
       "ytt": {
         "version": "v0.31.0",
+        "bottle": false
+      },
+      "tilt": {
+        "version": "0.18.11",
         "bottle": false
       }
     }

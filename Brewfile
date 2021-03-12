@@ -20,6 +20,7 @@ cask 'spotify'
 cask 'visual-studio-code'
 
 brew 'chruby'
+brew 'ctlptl'
 brew 'direnv'
 brew 'elixir'
 brew 'exercism'

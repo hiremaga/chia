@@ -959,6 +959,10 @@
       "kube-ps1": {
         "version": "0.7.0",
         "bottle": false
+      },
+      "ctlptl": {
+        "version": "0.4.2",
+        "bottle": false
       }
     }
   },

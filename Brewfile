@@ -38,6 +38,7 @@ brew 'nvm'
 brew 'octant'
 brew 'postgresql', restart_service: true
 brew 'pstree'
+brew 'rsync'
 brew 'ruby-install'
 brew 'stow'
 brew 'telnet'

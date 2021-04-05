@@ -963,6 +963,10 @@
       "ctlptl": {
         "version": "0.4.2",
         "bottle": false
+      },
+      "kubectx": {
+        "version": "0.9.3",
+        "bottle": false
       }
     }
   },

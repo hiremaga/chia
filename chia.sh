@@ -20,7 +20,7 @@ which brew || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homeb
 if [ ! -d ~/workspace/chia ]; then
   mkdir -p ~/workspace
   pushd ~/workspace
-    git clone https://github.com/hiremaga/chia.git
+    git clone https://github.com/hiremaga/chia.git --recurse-submodules
   popd
 fi
 

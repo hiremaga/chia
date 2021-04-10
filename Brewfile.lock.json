@@ -17,7 +17,7 @@
         "revision": "5d3be02f3e5ba5de401d865a51d8e245c30e086f"
       },
       "tilt-dev/tap": {
-        "revision": "6afd2888824ee1ecb2f9abde1c1bc536e8e858a7"
+        "revision": "8c78e12edb289b7d34af22b1519aadd0b575b4d4"
       }
     },
     "cask": {
@@ -922,7 +922,7 @@
         "bottle": false
       },
       "tilt": {
-        "version": "0.19.3",
+        "version": "0.19.4",
         "bottle": false
       },
       "rsync": {
@@ -983,7 +983,7 @@
       "big_sur": {
         "HOMEBREW_VERSION": "3.0.11",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "1307ce712e1fa76c21bddea70dd88bb4acd37534",
+        "Homebrew/homebrew-core": "e70ef73f0b663d3fba3d208412c608817cff259a",
         "CLT": "12.4.0.0.1.1610135815",
         "Xcode": "12.0",
         "macOS": "11.2.3"

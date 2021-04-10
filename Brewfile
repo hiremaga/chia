@@ -5,8 +5,6 @@ tap 'tilt-dev/tap'
 
 cask 'android-studio'
 cask 'authy'
-cask 'chromedriver'
-cask 'discord'
 cask 'docker'
 cask 'flycut'
 cask 'google-backup-and-sync'

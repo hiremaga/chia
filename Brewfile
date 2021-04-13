@@ -38,6 +38,7 @@ brew 'lastpass-cli'
 brew 'minikube'
 brew 'nvm'
 brew 'octant'
+brew 'openjdk'
 brew 'postgresql', restart_service: true
 brew 'pstree'
 brew 'rsync'

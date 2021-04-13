@@ -116,6 +116,12 @@
         "options": {
           "full_name": "google-cloud-sdk"
         }
+      },
+      "intellij-idea": {
+        "version": "2021.1",
+        "options": {
+          "full_name": "intellij-idea"
+        }
       }
     },
     "brew": {

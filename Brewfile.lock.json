@@ -34,7 +34,7 @@
         }
       },
       "google-chrome": {
-        "version": "89.0.4389.114",
+        "version": "89.0.4389.128",
         "options": {
           "full_name": "google-chrome"
         }
@@ -1078,9 +1078,9 @@
         "macOS": "10.15.7"
       },
       "big_sur": {
-        "HOMEBREW_VERSION": "3.1.1",
+        "HOMEBREW_VERSION": "3.1.2",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "fb0cbb0cc19473532503b555df72878e161d66a3",
+        "Homebrew/homebrew-core": "42578cb92349c932c6985753ea51494c55ebcfc9",
         "CLT": "12.4.0.0.1.1610135815",
         "Xcode": "12.0",
         "macOS": "11.2.3"

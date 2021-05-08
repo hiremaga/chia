@@ -12,7 +12,12 @@ sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Table stakes
-xcode-select --install || true
+if [[ $(xcode-select -p) != '/Applications/Xcode.app/Contents/Developer' ]]; then
+  echo 'Please install XCode from the app store before running this script'
+  echo 'A full XCode install is required for Flutter, hyperkit etc. Command-line tools is insufficient.'
+  exit 1
+fi
+
 softwareupdate -a -i true
 
 if ! which brew; then
@@ -34,6 +39,7 @@ pushd ~/workspace/chia
 
   echo 'installing dotfiles...'
   stow -t $HOME dotfiles
+  source $HOME/.zprofile
   echo 'installed dotfiles.'
 
   echo 'installing settings...'

@@ -35,7 +35,11 @@ fi
 
 pushd ~/workspace/chia
   brew bundle cleanup -f
-  brew bundle install
+  if [[ $(arch) == 'arm64' ]]; then
+    arch -arm64 brew bundle install
+  else
+    brew bundle install
+  fi
 
   echo 'installing dotfiles...'
   stow -t $HOME dotfiles

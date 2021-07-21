@@ -7,3 +7,4 @@ source macos-tools/install-openjdk.sh
 source macos-tools/install-jetbrains-ide-prefs.sh
 source macos-tools/install-global-npm-packages.sh
 source macos-tools/install-phoenix.sh
+source macos-tools/install-python-packages.sh

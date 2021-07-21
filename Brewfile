@@ -37,6 +37,7 @@ brew 'octant'
 brew 'openjdk'
 brew 'postgresql', restart_service: true
 brew 'pstree'
+brew 'python'
 brew 'rsync'
 brew 'ruby-install'
 brew 'stow'

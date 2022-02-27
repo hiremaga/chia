@@ -1,3 +1,5 @@
+#!/bin/bash
+
 source macos-settings/dns.sh
 source macos-settings/dock.sh
 source macos-settings/keyboard.sh

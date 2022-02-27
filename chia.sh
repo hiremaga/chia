@@ -42,15 +42,18 @@ pushd ~/workspace/chia
   fi
 
   echo 'installing dotfiles...'
-  stow -t $HOME dotfiles
-  source $HOME/.zprofile
+  stow -t "$HOME" dotfiles
+  # shellcheck source=dotfiles/.zprofile
+  source dotfiles/.zprofile
   echo 'installed dotfiles.'
 
   echo 'installing settings...'
+  # shellcheck source=macos-settings/00-everything.sh
   source macos-settings/00-everything.sh
   echo 'installed settings.'
 
   echo 'installing tools...'
+    # shellcheck source=macos-tools/00-everything.sh
   source macos-tools/00-everything.sh
   echo 'installing tools.'
 popd

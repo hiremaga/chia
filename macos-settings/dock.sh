@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Automatically hide and show Dock.
 sudo defaults write /Library/Preferences/com.apple.dock autohide -bool YES
 

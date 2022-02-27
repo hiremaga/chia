@@ -1,3 +1,5 @@
+#!/bin/bash
+
 function login_item {
     osascript -e "tell application \"System Events\" to make login item at end with properties {path:\"$1\", hidden:false}"
 }

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 source macos-tools/install-ohmyzsh.sh
 source macos-tools/create-postgres-role.sh
 source macos-tools/install-flutter.sh

@@ -12,6 +12,7 @@ cask 'google-cloud-sdk'
 cask 'google-chrome'
 cask 'intellij-idea-ce'
 cask 'iterm2'
+cask 'pieces'
 cask 'pop'
 cask 'rectangle'
 cask 'signal'
@@ -40,8 +41,9 @@ brew 'nvm'
 brew 'octant'
 brew 'openjdk@8'
 brew 'pack'
+brew 'pieces-cli'
 brew 'pipx' # manager virtual envs for globally installed python apps
-brew 'postgresql', restart_service: true
+brew 'postgresql@14', restart_service: true
 brew 'pstree'
 brew 'python'
 brew 'rsync'

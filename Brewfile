@@ -12,6 +12,7 @@ cask 'slack'
 cask 'spotify'
 cask 'visual-studio-code'
 
+brew 'block-goose-cli'
 brew 'chruby'
 brew 'direnv'
 brew 'elixir'

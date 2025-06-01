@@ -6,3 +6,4 @@ source macos-tools/install-nodes.sh
 source macos-tools/install-openjdk.sh
 source macos-tools/install-jetbrains-ide-prefs.sh
 source macos-tools/install-phoenix.sh
+source macos-tools/install-rust.sh

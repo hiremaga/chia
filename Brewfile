@@ -13,6 +13,7 @@ cask 'signal'
 cask 'slack'
 cask 'spotify'
 cask 'visual-studio-code'
+cask 'zed'
 
 brew 'block-goose-cli'
 brew 'chruby'

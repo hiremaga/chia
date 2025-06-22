@@ -10,7 +10,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/../common/utils.sh"
 
 # Define default tools to install (can be overridden by environment variable)
-DEFAULT_TOOLS="cargo-edit cargo-update cargo-watch"
+DEFAULT_TOOLS="cargo-edit cargo-update cargo-watch dioxus-cli"
 RUST_TOOLS=${RUST_TOOLS:-$DEFAULT_TOOLS}
 
 # Define default components to install via rustup

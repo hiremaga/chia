@@ -1,10 +1,8 @@
-# Automatically hide and show Dock.
-sudo defaults write /Library/Preferences/com.apple.dock autohide -bool YES
+# Source common utilities
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/../common/utils.sh"
 
-# Automatically hide and show Dock.
-defaults write com.apple.dock autohide -bool true
-
-# Clear standard icons from Dock.
-defaults write com.apple.dock persistent-apps -array
-
-killall Dock &> /dev/null
+log "Configuring Dock settings..."
+run_quiet defaults write com.apple.dock autohide -bool true
+run_quiet defaults write com.apple.dock persistent-apps -array
+run_quiet killall Dock

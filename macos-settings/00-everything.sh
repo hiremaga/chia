@@ -1,3 +1,6 @@
+# Disable debug mode that might be inherited
+set +x
+
 source macos-settings/dock.sh
 source macos-settings/keyboard.sh
 source macos-settings/switch-to-zsh.sh

@@ -63,8 +63,13 @@ pushd ~/workspace/chia > /dev/null
         run_with_logging "Installing Homebrew packages" brew bundle install || handle_error "Failed to install Homebrew packages"
     fi
 
-    run_with_logging "Installing dotfiles" stow -t $HOME dotfiles || handle_error "Failed to install dotfiles"
-    run_quiet source $HOME/.zprofile || true
+    # Install modern dotfiles with Stow
+    log "Installing dotfiles..."
+    run_with_logging "Installing zsh configuration" stow -t $HOME zsh || handle_error "Failed to install zsh configuration"
+    run_with_logging "Installing git configuration" stow -t $HOME git || handle_error "Failed to install git configuration"
+
+    # Source the new environment
+    run_quiet source $HOME/.zshenv || true
 
     log "Configuring macOS settings..."
     set +x; source macos-settings/00-everything.sh || handle_error "Failed to install settings"

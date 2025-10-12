@@ -1,0 +1,29 @@
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	# Enhanced git log with graph, decorations, and better formatting
+	lol = log --graph --decorate --pretty=format:'%C(yellow)%h%Creset%C(auto)%d%Creset %s %C(cyan)(%cr)%Creset %C(dim white)- %an%Creset' --abbrev-commit --all
+
+[url "git@github.com:"]
+	pushInsteadOf = https://github.com/
+	pushInsteadOf = git://github.com/
+
+[user]
+	name = Abhi Hiremagalur
+	email = abhijit@hiremaga.com
+
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+
+[init]
+	defaultBranch = main
+
+[core]
+	editor = vim
+
+[pull]
+	rebase = false

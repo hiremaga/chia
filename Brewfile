@@ -1,3 +1,4 @@
+# GUI Applications
 cask 'block-goose'
 cask 'discord'
 cask 'docker'
@@ -14,6 +15,18 @@ cask 'spotify'
 cask 'visual-studio-code'
 cask 'zed'
 
+# Fonts
+cask 'font-jetbrains-mono'
+
+# Modern shell tools
+brew 'starship'           # Modern cross-shell prompt
+brew 'fzf'                # Fuzzy finder
+brew 'eza'                # Modern ls replacement
+brew 'zsh-autosuggestions'
+brew 'zsh-syntax-highlighting'
+brew 'zsh-history-substring-search'
+
+# Development tools
 brew 'block-goose-cli'
 brew 'chruby'
 brew 'direnv'

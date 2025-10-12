@@ -13,7 +13,11 @@ This is "chia" - a macOS developer workstation setup tool that seeds a healthy d
 - `chia.sh` - Main entry point script that orchestrates the entire setup process
 - `common/utils.sh` - Shared utility functions for logging, error handling, and command execution
 - `Brewfile` - Homebrew package definitions for applications and CLI tools
-- `dotfiles/` - Personal configuration files managed via GNU Stow
+- `zsh/` - Modern Zsh configuration files (no Oh My Zsh dependency)
+  - `.zshrc` - Shell configuration with Starship prompt, native plugins
+  - `.zshenv` - Environment variables and PATH setup
+- `git/` - Git configuration files
+  - `.gitconfig` - Git aliases and settings
 - `macos-settings/` - Scripts for configuring macOS system preferences
 - `macos-tools/` - Scripts for installing development tools (Node.js, Ruby, Rust, etc.)
 
@@ -58,13 +62,18 @@ brew bundle cleanup -f
 
 ### Dotfiles Management
 
-Dotfiles are managed using GNU Stow:
+Dotfiles are managed using GNU Stow with modular directory structure:
 ```bash
-# Install dotfiles to home directory
-stow -t $HOME dotfiles
+# Install all configurations
+stow -t $HOME zsh
+stow -t $HOME git
 
-# Remove dotfiles
-stow -D -t $HOME dotfiles
+# Remove configurations
+stow -D -t $HOME zsh
+stow -D -t $HOME git
+
+# Test stow without making changes
+stow -n -v -t $HOME zsh
 ```
 
 ## Key Design Patterns
@@ -106,7 +115,9 @@ When modifying scripts in this repository:
 ### Installed Tools
 The setup installs comprehensive development tooling including:
 - Homebrew package manager
+- **Modern Shell Tools**: Starship prompt, fzf, eza, zsh plugins (autosuggestions, syntax-highlighting, history-substring-search)
 - Multiple programming languages (Go, Python, Ruby, Rust, Node.js)
 - Development environments (VS Code, Zed, Docker)
-- CLI utilities (gh, jq, tree, tmux, etc.)
-- macOS applications (Rectangle, Slack, Spotify, etc.)
+- CLI utilities (gh, jq, tree, tmux, direnv, etc.)
+- macOS applications (Rectangle, Slack, Spotify, Ghostty, etc.)
+- Fonts (JetBrains Mono for development)

@@ -67,6 +67,7 @@ pushd ~/workspace/chia > /dev/null
     log "Installing dotfiles..."
     run_with_logging "Installing zsh configuration" stow -t $HOME zsh || handle_error "Failed to install zsh configuration"
     run_with_logging "Installing git configuration" stow -t $HOME git || handle_error "Failed to install git configuration"
+    run_with_logging "Installing Zed configuration" stow -t $HOME zed || handle_error "Failed to install Zed configuration"
 
     # Source the new environment
     run_quiet source $HOME/.zshenv || true

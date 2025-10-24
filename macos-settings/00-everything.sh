@@ -6,4 +6,5 @@ source macos-settings/keyboard.sh
 source macos-settings/switch-to-zsh.sh
 source macos-settings/login-items.sh
 source macos-settings/ssh-key.sh
+source macos-settings/netrc-permissions.sh
 source macos-settings/duti-default-editor.sh

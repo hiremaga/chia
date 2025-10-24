@@ -28,6 +28,7 @@ brew 'zsh-history-substring-search'
 
 # Development tools
 brew 'block-goose-cli'
+brew 'oven-sh/bun/bun'
 brew 'chruby'
 brew 'direnv'
 brew 'duti'

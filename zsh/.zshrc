@@ -3,6 +3,17 @@
 # ============================================================================
 
 # ----------------------------------------------------------------------------
+# Helper Functions
+# ----------------------------------------------------------------------------
+
+# Warn when expected tools are missing
+warn_missing() {
+    local tool="$1"
+    local message="$2"
+    echo "⚠️  Warning: $tool not found - $message" >&2
+}
+
+# ----------------------------------------------------------------------------
 # History Configuration
 # ----------------------------------------------------------------------------
 HISTFILE=~/.zsh_history
@@ -29,6 +40,8 @@ if [ -f /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-s
     source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
     bindkey '^[[A' history-substring-search-up      # Up arrow
     bindkey '^[[B' history-substring-search-down    # Down arrow
+else
+    warn_missing "zsh-history-substring-search" "Add to Brewfile and run chia.sh"
 fi
 
 # ----------------------------------------------------------------------------
@@ -50,11 +63,15 @@ zstyle ':completion:*' menu select
 # Syntax highlighting (must be loaded before autosuggestions)
 if [ -f /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
     source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+else
+    warn_missing "zsh-syntax-highlighting" "Add to Brewfile and run chia.sh"
 fi
 
 # Autosuggestions
 if [ -f /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
     source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+else
+    warn_missing "zsh-autosuggestions" "Add to Brewfile and run chia.sh"
 fi
 
 # ----------------------------------------------------------------------------
@@ -65,20 +82,24 @@ fi
 if [ -f /opt/homebrew/opt/chruby/share/chruby/chruby.sh ]; then
     source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
     source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+else
+    warn_missing "chruby" "Add chruby to Brewfile and run chia.sh"
 fi
 
 # nvm - Node version management
 export NVM_DIR="$HOME/.nvm"
 if [ -s "/opt/homebrew/opt/nvm/nvm.sh" ]; then
     source "/opt/homebrew/opt/nvm/nvm.sh"
-fi
-if [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ]; then
-    source "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+    [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && source "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+else
+    warn_missing "nvm" "Add nvm to Brewfile and run chia.sh"
 fi
 
 # direnv - Directory-specific environment variables
 if command -v direnv &> /dev/null; then
     eval "$(direnv hook zsh)"
+else
+    warn_missing "direnv" "Add direnv to Brewfile and run chia.sh"
 fi
 
 # FZF - Fuzzy finder
@@ -87,11 +108,15 @@ if [ -f ~/.fzf.zsh ]; then
 elif command -v fzf &> /dev/null; then
     # Set up fzf key bindings and completion if installed via Homebrew
     eval "$(fzf --zsh)"
+else
+    warn_missing "fzf" "Add fzf to Brewfile and run chia.sh"
 fi
 
 # GitHub CLI completion
 if command -v gh &> /dev/null; then
     eval "$(gh completion -s zsh)"
+else
+    warn_missing "gh" "Add gh to Brewfile and run chia.sh"
 fi
 
 # ----------------------------------------------------------------------------
@@ -119,4 +144,6 @@ alias nproc="sysctl -n hw.logicalcpu"
 # Initialize Starship prompt (must be at the end)
 if command -v starship &> /dev/null; then
     eval "$(starship init zsh)"
+else
+    warn_missing "starship" "Add starship to Brewfile and run chia.sh"
 fi

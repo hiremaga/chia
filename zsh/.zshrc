@@ -47,6 +47,12 @@ fi
 # ----------------------------------------------------------------------------
 # Completion System
 # ----------------------------------------------------------------------------
+# Add Homebrew's site-functions to fpath to enable completions.
+# This must be done before compinit.
+if command -v brew &> /dev/null; then
+    fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
+fi
+
 autoload -Uz compinit
 compinit
 
@@ -79,6 +85,7 @@ fi
 # ----------------------------------------------------------------------------
 
 # chruby - Ruby version management
+# Sourced directly as it provides core version-switching functionality, not just completions.
 if [ -f /opt/homebrew/opt/chruby/share/chruby/chruby.sh ]; then
     source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
     source /opt/homebrew/opt/chruby/share/chruby/auto.sh
@@ -87,15 +94,18 @@ else
 fi
 
 # nvm - Node version management
+# nvm is sourced directly to provide its core version-switching functionality.
 export NVM_DIR="$HOME/.nvm"
 if [ -s "/opt/homebrew/opt/nvm/nvm.sh" ]; then
     source "/opt/homebrew/opt/nvm/nvm.sh"
+    # It also uses a bash-style completion script that must be sourced manually.
     [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && source "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
 else
     warn_missing "nvm" "Add nvm to Brewfile and run chia.sh"
 fi
 
 # direnv - Directory-specific environment variables
+# `direnv hook zsh` is required to integrate with the shell prompt; it's not just for completions.
 if command -v direnv &> /dev/null; then
     eval "$(direnv hook zsh)"
 else
@@ -103,27 +113,11 @@ else
 fi
 
 # FZF - Fuzzy finder
-if [ -f ~/.fzf.zsh ]; then
-    source ~/.fzf.zsh
-elif command -v fzf &> /dev/null; then
-    # Set up fzf key bindings and completion if installed via Homebrew
+# eval is used here to set up fzf's key bindings (e.g., Ctrl+R) and completions.
+if command -v fzf &> /dev/null; then
     eval "$(fzf --zsh)"
 else
     warn_missing "fzf" "Add fzf to Brewfile and run chia.sh"
-fi
-
-# GitHub CLI completion
-if command -v gh &> /dev/null; then
-    eval "$(gh completion -s zsh)"
-else
-    warn_missing "gh" "Add gh to Brewfile and run chia.sh"
-fi
-
-# just - Command runner
-if command -v just &> /dev/null; then
-    eval "$(just --completions zsh)"
-else
-    warn_missing "just" "Add just to Brewfile and run chia.sh"
 fi
 
 # ----------------------------------------------------------------------------
@@ -148,6 +142,7 @@ alias nproc="sysctl -n hw.logicalcpu"
 # ----------------------------------------------------------------------------
 # Starship Prompt
 # ----------------------------------------------------------------------------
+# `starship init zsh` generates the shell prompt and must be evaluated.
 # Initialize Starship prompt (must be at the end)
 if command -v starship &> /dev/null; then
     eval "$(starship init zsh)"

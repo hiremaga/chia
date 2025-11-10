@@ -119,6 +119,13 @@ else
     warn_missing "gh" "Add gh to Brewfile and run chia.sh"
 fi
 
+# just - Command runner
+if command -v just &> /dev/null; then
+    eval "$(just --completions zsh)"
+else
+    warn_missing "just" "Add just to Brewfile and run chia.sh"
+fi
+
 # ----------------------------------------------------------------------------
 # Modern Aliases (using eza instead of ls)
 # ----------------------------------------------------------------------------

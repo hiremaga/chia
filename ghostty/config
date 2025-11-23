@@ -1,0 +1,24 @@
+# Ghostty Terminal Configuration
+# This config is managed by chia and installed via GNU stow to ~/.config/ghostty/config
+
+# ============================================================================
+# Shift+Enter Key Binding Fix
+# ============================================================================
+#
+# Issue: Ghostty implements the modern "modifyOtherKeys" terminal standard,
+# which sends the escape sequence [27;2;13~ for Shift+Enter. While this
+# provides more precise key information, many applications and shells don't
+# yet recognize this modern sequence and display raw characters: ;2;13~
+#
+# Solution: Configure Ghostty to send the legacy escape sequence \x1b\r
+# that is widely recognized by shells like zsh and applications.
+#
+# References:
+# - https://github.com/ghostty-org/ghostty/issues/1850
+# - https://github.com/ghostty-org/ghostty/discussions/5368
+# - https://github.com/anthropics/claude-code/issues/5757
+# - https://ghostty.org/docs/config/keybind
+#
+# This ensures Shift+Enter inserts a newline in terminal prompts and
+# applications, matching behavior from macOS Terminal and other terminals.
+keybind = shift+enter=text:\x1b\r

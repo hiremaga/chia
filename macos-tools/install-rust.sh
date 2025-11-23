@@ -18,8 +18,25 @@ RUST_TOOLS=${RUST_TOOLS:-$DEFAULT_TOOLS}
 get_tool_flags() {
     local tool="$1"
     case "$tool" in
+        *)
+            echo ""
+            ;;
+    esac
+}
+
+# Function to get environment variables for specific tools
+# Returns environment variables that need to be set during installation
+get_tool_env() {
+    local tool="$1"
+    case "$tool" in
         cargo-watch)
-            echo "--no-default-features"  # Disable desktop notifications to avoid AppKit linking issues on Apple Silicon
+            # Add AppKit framework to linker on macOS to fix mac-notification-sys linking issues
+            # The -framework flag only works on macOS, not Linux
+            if [[ "$OSTYPE" == "darwin"* ]]; then
+                echo "RUSTFLAGS=\"-C link-arg=-framework -C link-arg=AppKit\""
+            else
+                echo ""
+            fi
             ;;
         *)
             echo ""
@@ -60,16 +77,23 @@ install_tools() {
 
     log "Installing Rust tools..."
     for tool in $RUST_TOOLS; do
-        # Get any special flags for this tool
+        # Get any special flags and environment variables for this tool
         local flags="$(get_tool_flags "$tool")"
+        local env_vars="$(get_tool_env "$tool")"
 
         if cargo install --list | grep -q "$tool"; then
             # If cargo-update is installed, use it to update the tool
             if [ "$tool" != "cargo-update" ] && command_exists cargo-install-update; then
-                run_with_logging "Updating $tool" cargo install-update "$tool" || log "Warning: Failed to update $tool"
+                # cargo-install-update doesn't support custom env vars or flags well,
+                # so use cargo install --force instead for tools that need special handling
+                if [ -n "$env_vars" ] || [ -n "$flags" ]; then
+                    run_with_logging "Updating $tool" sh -c "$env_vars cargo install --force $tool $flags" || log "Warning: Failed to update $tool"
+                else
+                    run_with_logging "Updating $tool" cargo install-update "$tool" || log "Warning: Failed to update $tool"
+                fi
             fi
         else
-            run_with_logging "Installing $tool" cargo install "$tool" $flags || log "Warning: Failed to install $tool"
+            run_with_logging "Installing $tool" sh -c "$env_vars cargo install $tool $flags" || log "Warning: Failed to install $tool"
         fi
     done
 }

@@ -140,12 +140,12 @@ if [[ ! -f "$SSH_KEY_PATH" ]]; then
     log "  • Authenticate with remote servers"
     log ""
 
-    read -p "Would you like to generate an SSH key now? [Y/n]: " -n 1 -r
+    read -p "Would you like to generate an SSH key now? [Y/n]: " -n 1 -r < /dev/tty
     echo
 
     if [[ ! $REPLY =~ ^[Nn]$ ]]; then
         log ""
-        read -p "Enter your email address for the SSH key: " email
+        read -p "Enter your email address for the SSH key: " email < /dev/tty
 
         if [[ -z "$email" ]]; then
             handle_error "Email address is required for SSH key generation"
@@ -184,7 +184,7 @@ if [[ ! -f "$SSH_KEY_PATH" ]]; then
         eval "$(ssh-agent -s)" > /dev/null
         ssh-add "$SSH_KEY_PATH" 2>/dev/null || true
 
-        read -p "Press Enter when you've added the key to GitHub to continue..."
+        read -p "Press Enter when you've added the key to GitHub to continue..." < /dev/tty
         echo
     else
         log ""

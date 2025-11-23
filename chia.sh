@@ -10,9 +10,7 @@ BOOTSTRAP_MODE=false
 if [[ ! -f "$SCRIPT_DIR/common/utils.sh" ]]; then
     BOOTSTRAP_MODE=true
 
-    # Bootstrap utilities - minimal inline versions for first run
-    VERBOSE=${CHIA_VERBOSE:-false}
-
+    # Barebones bootstrap utilities - only what's needed before utils.sh exists
     log() {
         echo "[$(date +'%Y-%m-%d %H:%M:%S')] $1"
     }
@@ -29,47 +27,8 @@ if [[ ! -f "$SCRIPT_DIR/common/utils.sh" ]]; then
     run_with_logging() {
         local description="$1"
         shift
-        local temp_log=$(mktemp)
-
-        if [[ "$VERBOSE" == "true" ]]; then
-            log "$description"
-            "$@" 2>&1 | tee "$temp_log"
-            local exit_code=${PIPESTATUS[0]}
-        else
-            "$@" > "$temp_log" 2>&1
-            local exit_code=$?
-        fi
-
-        if [[ $exit_code -ne 0 ]]; then
-            log "Failed: $description"
-            log "Command output:"
-            cat "$temp_log" | sed 's/^/  /'
-            rm -f "$temp_log"
-            return $exit_code
-        else
-            [[ "$VERBOSE" != "true" ]] && log "$description - completed"
-            rm -f "$temp_log"
-            return 0
-        fi
-    }
-
-    run_quiet() {
-        local temp_log=$(mktemp)
-        "$@" > "$temp_log" 2>&1
-        local exit_code=$?
-
-        if [[ $exit_code -ne 0 ]]; then
-            log "Command failed: $*"
-            log "Output:"
-            cat "$temp_log" | sed 's/^/  /'
-        fi
-
-        rm -f "$temp_log"
-        return $exit_code
-    }
-
-    cleanup_temp_files() {
-        find /tmp -name "tmp.*" -user "$(whoami)" -mtime +1 -delete 2>/dev/null || true
+        log "$description"
+        "$@" 2>&1 || handle_error "Failed: $description"
     }
 
     log ""
@@ -85,7 +44,7 @@ if [[ ! -f "$SCRIPT_DIR/common/utils.sh" ]]; then
     log "  • Installing development tools and applications"
     log ""
 else
-    # Normal mode - source the utilities
+    # Normal mode - source the full utilities
     source "$SCRIPT_DIR/common/utils.sh"
 
     # Show usage tip if not in verbose mode

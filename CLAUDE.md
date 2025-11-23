@@ -19,6 +19,10 @@ This is "chia" - a macOS developer workstation setup tool that seeds a healthy d
 - `git/` - Git configuration files
   - `.gitconfig` - Git aliases and settings
 - `macos-settings/` - Scripts for configuring macOS system preferences
+  - `touchid-sudo.sh` - Enables Touch ID for sudo authentication
+  - `keyboard.sh` - Fast key repeat settings
+  - `dock.sh` - Dock configuration
+  - And more...
 - `macos-tools/` - Scripts for installing development tools (Node.js, Ruby, Rust, etc.)
 
 ### Script Architecture
@@ -90,6 +94,7 @@ The utility functions provide a sophisticated logging system:
 - Custom `handle_error()` function provides consistent error reporting
 - Temporary files are automatically cleaned up
 - Sudo keep-alive prevents repeated password prompts
+- Touch ID is automatically configured for sudo (use fingerprint instead of password)
 
 ### Modular Design
 - Settings and tools are split into separate script categories

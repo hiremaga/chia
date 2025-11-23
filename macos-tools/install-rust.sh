@@ -21,7 +21,7 @@ RUST_COMPONENTS=${RUST_COMPONENTS:-$DEFAULT_COMPONENTS}
 
 # Install Rust using rustup
 install_rust() {
-    run_with_logging "Installing Rust" curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+    run_with_logging "Installing Rust" sh -c "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y"
     if [ $? -ne 0 ]; then
         exit 1
     fi

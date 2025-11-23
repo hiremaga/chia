@@ -13,6 +13,10 @@ source "$SCRIPT_DIR/../common/utils.sh"
 DEFAULT_TOOLS="cargo-edit cargo-update cargo-watch dioxus-cli"
 RUST_TOOLS=${RUST_TOOLS:-$DEFAULT_TOOLS}
 
+# Tools that need special installation flags (tool:flags)
+declare -A TOOL_FLAGS
+TOOL_FLAGS[cargo-watch]="--no-default-features"  # Disable desktop notifications to avoid AppKit linking issues on Apple Silicon
+
 # Define default components to install via rustup
 DEFAULT_COMPONENTS="clippy rustfmt"
 RUST_COMPONENTS=${RUST_COMPONENTS:-$DEFAULT_COMPONENTS}
@@ -46,13 +50,16 @@ install_tools() {
 
     log "Installing Rust tools..."
     for tool in $RUST_TOOLS; do
+        # Get any special flags for this tool
+        local flags="${TOOL_FLAGS[$tool]:-}"
+
         if cargo install --list | grep -q "$tool"; then
             # If cargo-update is installed, use it to update the tool
             if [ "$tool" != "cargo-update" ] && command_exists cargo-install-update; then
                 run_with_logging "Updating $tool" cargo install-update "$tool" || log "Warning: Failed to update $tool"
             fi
         else
-            run_with_logging "Installing $tool" cargo install "$tool" || log "Warning: Failed to install $tool"
+            run_with_logging "Installing $tool" cargo install "$tool" $flags || log "Warning: Failed to install $tool"
         fi
     done
 }

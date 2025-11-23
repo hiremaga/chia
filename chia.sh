@@ -253,6 +253,7 @@ pushd ~/workspace/chia > /dev/null
     run_with_logging "Installing zsh configuration" stow -t $HOME zsh || handle_error "Failed to install zsh configuration"
     run_with_logging "Installing git configuration" stow -t $HOME git || handle_error "Failed to install git configuration"
     run_with_logging "Installing ruby configuration" stow -t $HOME ruby || handle_error "Failed to install ruby configuration"
+    run_with_logging "Installing ghostty configuration" stow -t $HOME ghostty || handle_error "Failed to install ghostty configuration"
 
     # Source the new environment
     run_quiet source $HOME/.zshenv || true

@@ -17,6 +17,11 @@ handle_error() {
     exit 1
 }
 
+# Check if command exists
+command_exists() {
+    command -v "$1" >/dev/null 2>&1
+}
+
 # Function to run command with smart logging
 # Usage: run_with_logging "description" command args...
 run_with_logging() {
@@ -60,11 +65,6 @@ run_quiet() {
 
     rm -f "$temp_log"
     return $exit_code
-}
-
-# Check if command exists
-command_exists() {
-    command -v "$1" >/dev/null 2>&1
 }
 
 # Progress indicator for long-running operations

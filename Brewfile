@@ -1,5 +1,5 @@
 # GUI Applications
-cask 'block-goose'
+cask 'claude-code'
 cask 'discord'
 cask 'docker'
 cask 'flycut'
@@ -25,7 +25,6 @@ brew 'zsh-syntax-highlighting'
 brew 'zsh-history-substring-search'
 
 # Development tools
-brew 'block-goose-cli'
 brew 'oven-sh/bun/bun'
 brew 'chruby'
 brew 'direnv'

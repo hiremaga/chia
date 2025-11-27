@@ -1,8 +1,8 @@
-# GUI Applications
 cask 'claude-code'
 cask 'discord'
 cask 'docker'
 cask 'flycut'
+cask 'font-jetbrains-mono' # For use in Zed etc. Ghostty bundles this, so it might not actually be used/needed
 cask 'ghostty'
 cask 'google-drive'
 cask 'google-chrome'
@@ -12,9 +12,6 @@ cask 'slack'
 cask 'spotify'
 cask 'visual-studio-code'
 cask 'zed'
-
-# Fonts
-cask 'font-jetbrains-mono'
 
 # Modern shell tools
 brew 'starship'           # Modern cross-shell prompt

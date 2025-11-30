@@ -149,3 +149,6 @@ if command -v starship &> /dev/null; then
 else
     warn_missing "starship" "Add starship to Brewfile and run chia.sh"
 fi
+
+# Added by Antigravity
+export PATH="/Users/hiremaga/.antigravity/antigravity/bin:$PATH"

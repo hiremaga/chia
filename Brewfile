@@ -1,3 +1,4 @@
+cask 'antigravity'
 cask 'claude-code'
 cask 'discord'
 cask 'docker'

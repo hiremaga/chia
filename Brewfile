@@ -1,4 +1,8 @@
 cask 'antigravity'
+cask 'codex'
+cask 'chatgpt'
+cask 'chatgpt-atlas'
+cask 'claude'
 cask 'claude-code'
 cask 'discord'
 cask 'docker'

@@ -29,16 +29,22 @@ configure_plugin() {
     local plugin="$2"
     local marketplace_name="${marketplace##*/}"
 
+    if ! claude plugin marketplace list 2>/dev/null | grep -q "$marketplace_name"; then
+        run_with_logging "Adding marketplace $marketplace_name" \
+            claude plugin marketplace add "$marketplace"
+    fi
+
     if claude plugin list 2>/dev/null | grep -q "^  ❯ ${plugin}@"; then
-        log "Plugin $plugin already installed - skipping"
+        run_with_logging "Updating plugin $plugin" \
+            claude plugin update "${plugin}@${marketplace_name}"
     else
-        if ! claude plugin marketplace list 2>/dev/null | grep -q "$marketplace_name"; then
-            run_with_logging "Adding marketplace $marketplace_name" \
-                claude plugin marketplace add "$marketplace"
-        fi
         run_with_logging "Installing plugin $plugin" \
             claude plugin install "$plugin"
     fi
 }
 
-configure_plugin "EveryInc/compound-engineering-plugin" "compound-engineering"
+configure_plugin "obra/superpowers-marketplace"                    "superpowers"
+configure_plugin "obra/superpowers-marketplace"                    "superpowers-chrome"
+configure_plugin "obra/superpowers-marketplace"                    "superpowers-developing-for-claude-code"
+configure_plugin "obra/superpowers-marketplace"                    "elements-of-style"
+configure_plugin "EveryInc/compound-engineering-plugin"            "compound-engineering"

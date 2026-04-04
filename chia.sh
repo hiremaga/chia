@@ -242,6 +242,26 @@ fi
 pushd ~/workspace/chia > /dev/null
     run_with_logging "Cleaning up old Homebrew packages" brew bundle cleanup -f || log "Warning: Homebrew cleanup failed"
 
+    log ""
+    log "Checking for Homebrew upgrades..."
+    OUTDATED=$(brew outdated --verbose 2>/dev/null || true)
+    if [[ -n "$OUTDATED" ]]; then
+        log ""
+        log "The following packages have upgrades available:"
+        echo "$OUTDATED" | while IFS= read -r line; do log "  $line"; done
+        log ""
+        read -p "Would you like to upgrade now? [y/N]: " -n 1 -r < /dev/tty
+        echo
+        if [[ $REPLY =~ ^[Yy]$ ]]; then
+            run_with_logging "Upgrading Homebrew packages" brew upgrade || log "Warning: Some upgrades failed"
+        else
+            log "Skipping upgrades."
+        fi
+    else
+        log "✓ All Homebrew packages are up to date"
+    fi
+    log ""
+
     if [[ $(arch) == 'arm64' ]]; then
         run_with_logging "Installing Homebrew packages" arch -arm64 brew bundle install || handle_error "Failed to install Homebrew packages"
     else

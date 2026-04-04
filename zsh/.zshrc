@@ -120,6 +120,14 @@ else
     warn_missing "fzf" "Add fzf to Brewfile and run chia.sh"
 fi
 
+# worktrunk (wt) - Git worktree management
+# Shell integration enables `wt` to change directories and provides completions.
+if command -v wt &> /dev/null; then
+    eval "$(wt config shell init zsh)"
+else
+    warn_missing "wt" "Add worktrunk to Brewfile and run chia.sh"
+fi
+
 # ----------------------------------------------------------------------------
 # Modern Aliases (using eza instead of ls)
 # ----------------------------------------------------------------------------

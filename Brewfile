@@ -1,3 +1,5 @@
+tap 'manaflow-ai/cmux'
+
 cask 'antigravity'
 cask 'codex'
 cask 'chatgpt'
@@ -6,8 +8,8 @@ cask 'claude-code'
 cask 'discord'
 cask 'docker'
 cask 'flycut'
-cask 'font-jetbrains-mono' # For use in Zed etc. Ghostty bundles this, so it might not actually be used/needed
-cask 'ghostty'
+cask 'cmux'
+cask 'font-jetbrains-mono'
 cask 'google-drive'
 cask 'google-chrome'
 cask 'ollama'

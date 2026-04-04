@@ -48,3 +48,4 @@ configure_plugin "obra/superpowers-marketplace"                    "superpowers-
 configure_plugin "obra/superpowers-marketplace"                    "superpowers-developing-for-claude-code"
 configure_plugin "obra/superpowers-marketplace"                    "elements-of-style"
 configure_plugin "EveryInc/compound-engineering-plugin"            "compound-engineering"
+configure_plugin "max-sixty/worktrunk"                             "worktrunk"

@@ -5,5 +5,5 @@ source macos-tools/install-ohmyzsh.sh
 source macos-tools/create-postgres-role.sh
 source macos-tools/install-rubies.sh
 source macos-tools/install-nodes.sh
-source macos-tools/configure-mcp-servers.sh
+source macos-tools/claude.sh
 source macos-tools/install-rust.sh

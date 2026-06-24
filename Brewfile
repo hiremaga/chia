@@ -16,10 +16,15 @@ cask 'rectangle'
 cask 'reflect'
 cask 'slack'
 cask 'spotify'
+cask 'utm'
 cask 'visual-studio-code'
 cask 'zed'
 
+# App Store apps
+mas 'Kindle', id: 302584613
+
 # Modern shell tools
+brew 'mas'
 brew 'starship'           # Modern cross-shell prompt
 brew 'fzf'                # Fuzzy finder
 brew 'eza'                # Modern ls replacement
@@ -29,12 +34,14 @@ brew 'zsh-history-substring-search'
 
 # Development tools
 brew 'oven-sh/bun/bun'
+brew 'bat'
 brew 'chruby'
 brew 'direnv'
 brew 'duti'
 brew 'exercism'
 brew 'fswatch'
 brew 'gh'
+brew 'git-delta'
 brew 'go'
 brew 'jq'
 brew 'just'

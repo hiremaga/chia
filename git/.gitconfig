@@ -24,6 +24,11 @@
 
 [core]
 	editor = vim
+	pager = delta
 
 [pull]
 	rebase = false
+
+[delta]
+    side-by-side = true
+    line-numbers = true

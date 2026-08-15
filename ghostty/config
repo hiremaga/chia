@@ -22,3 +22,4 @@
 # This ensures Shift+Enter inserts a newline in terminal prompts and
 # applications, matching behavior from macOS Terminal and other terminals.
 keybind = shift+enter=text:\x1b\r
+shell-integration-features = ssh-env,ssh-terminfo

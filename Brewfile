@@ -22,12 +22,13 @@ mas 'Kindle', id: 302584613
 
 # Modern shell tools
 brew 'mas'
+brew 'atuin'              # Shell history: searchable SQLite database
 brew 'starship'           # Modern cross-shell prompt
 brew 'fzf'                # Fuzzy finder
 brew 'eza'                # Modern ls replacement
 brew 'zsh-autosuggestions'
 brew 'zsh-syntax-highlighting'
-brew 'zsh-history-substring-search'
+# zsh-history-substring-search removed: atuin now owns the Up arrow binding
 
 # Development tools
 brew 'oven-sh/bun/bun', trusted: true

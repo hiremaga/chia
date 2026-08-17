@@ -35,14 +35,9 @@ setopt HIST_VERIFY              # Show command with history expansion before run
 # ----------------------------------------------------------------------------
 bindkey -e  # Emacs-style key bindings
 
-# History substring search (requires zsh-history-substring-search from Homebrew)
-if [ -f /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh ]; then
-    source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
-    bindkey '^[[A' history-substring-search-up      # Up arrow
-    bindkey '^[[B' history-substring-search-down    # Down arrow
-else
-    warn_missing "zsh-history-substring-search" "Add to Brewfile and run chia.sh"
-fi
+# Note: Up/Down arrow history search is provided by atuin, initialized at the
+# end of this file. It replaced zsh-history-substring-search, which bound the
+# same keys and would have fought with it.
 
 # ----------------------------------------------------------------------------
 # Completion System
@@ -126,6 +121,22 @@ if command -v wt &> /dev/null; then
     eval "$(wt config shell init zsh)"
 else
     warn_missing "wt" "Add worktrunk to Brewfile and run chia.sh"
+fi
+
+# atuin - Shell history in a searchable SQLite database
+# Order matters, so this block must stay put:
+#   * after fzf, because both bind Ctrl-R and the last one to bind it wins.
+#     fzf keeps Ctrl-T (files) and Alt-C (cd); atuin takes Ctrl-R.
+#   * after zsh-autosuggestions, because atuin prepends itself to
+#     ZSH_AUTOSUGGEST_STRATEGY so suggestions are drawn from its database
+#     rather than ~/.zsh_history.
+# Binds Ctrl-R (global search), Up arrow (scoped to the current directory via
+# filter_mode_shell_up_key_binding), and `?` at the start of a line for
+# Atuin AI natural-language search.
+if command -v atuin &> /dev/null; then
+    eval "$(atuin init zsh)"
+else
+    warn_missing "atuin" "Add atuin to Brewfile and run chia.sh"
 fi
 
 # ----------------------------------------------------------------------------

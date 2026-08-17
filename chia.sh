@@ -274,6 +274,14 @@ pushd ~/workspace/chia > /dev/null
     run_with_logging "Installing git configuration" stow -t $HOME git || handle_error "Failed to install git configuration"
     run_with_logging "Installing ruby configuration" stow -t $HOME ruby || handle_error "Failed to install ruby configuration"
     run_with_logging "Installing ghostty configuration" stow -t $HOME ghostty || handle_error "Failed to install ghostty configuration"
+    run_with_logging "Installing atuin configuration" stow -t $HOME atuin || handle_error "Failed to install atuin configuration"
+
+    # Seed atuin's database from the existing zsh history file. This is a
+    # one-time bootstrap: atuin records new commands via its shell hooks, and
+    # re-importing would only create duplicates, so skip it once the db exists.
+    if command_exists atuin && [[ ! -f "${XDG_DATA_HOME:-$HOME/.local/share}/atuin/history.db" ]]; then
+        run_with_logging "Importing existing shell history into atuin" atuin import auto || log "Warning: atuin history import failed"
+    fi
 
     # Source the new environment
     run_quiet source $HOME/.zshenv || true

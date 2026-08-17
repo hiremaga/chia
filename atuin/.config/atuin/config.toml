@@ -1,0 +1,72 @@
+# ============================================================================
+# Atuin Configuration
+# ============================================================================
+# Managed by chia via GNU Stow. Edit this file in ~/workspace/chia/atuin, not
+# in ~/.config/atuin (which is a symlink back to here).
+#
+# Full list of available options:
+#   https://github.com/atuinsh/atuin/blob/main/crates/atuin-client/config.toml
+
+# ----------------------------------------------------------------------------
+# Sync
+# ----------------------------------------------------------------------------
+# History stays local to this machine. Atuin's sync is end-to-end encrypted,
+# but it requires an account and an interactive `atuin register` / `atuin login`,
+# so it is deliberately left off here rather than half-configured.
+#
+# To enable it later: set this to true, then run `atuin login`.
+auto_sync = false
+
+# Don't phone home to check for new releases; Homebrew owns updates for this
+# machine, and `brew upgrade` is what actually installs them.
+update_check = false
+
+# ----------------------------------------------------------------------------
+# Search Behaviour
+# ----------------------------------------------------------------------------
+# Fuzzy matching, consistent with how fzf behaves elsewhere in this shell.
+search_mode = "fuzzy"
+
+# Search all history by default regardless of directory or session.
+filter_mode = "global"
+
+# When invoked via the Up arrow, scope results to the current directory.
+# Up arrow replaces zsh-history-substring-search, whose value was recalling
+# what you just ran here; directory scope preserves that instinct, while
+# Ctrl-R remains the escape hatch to everything.
+filter_mode_shell_up_key_binding = "directory"
+
+# Press Enter to run the highlighted command immediately.
+# (This was atuin's own generated default; kept explicit so it can't drift.)
+enter_accept = true
+
+# ----------------------------------------------------------------------------
+# Interface
+# ----------------------------------------------------------------------------
+# Render inline under the prompt rather than taking over the whole terminal.
+inline_height = 20
+style = "compact"
+
+# Show the full command for entries too long to fit on one line.
+show_preview = true
+
+# Esc returns the line you had typed, discarding the search.
+exit_mode = "return-original"
+
+# ----------------------------------------------------------------------------
+# Privacy
+# ----------------------------------------------------------------------------
+# Commands matching these regexes are never written to history. Note these are
+# unanchored, so they match anywhere in the command unless ^ or $ is used.
+history_filter = [
+  # Secrets passed inline as environment variables or flags
+  "(^|\\s)(AWS_SECRET_ACCESS_KEY|ANTHROPIC_API_KEY|OPENAI_API_KEY|GITHUB_TOKEN)=",
+  "--password[= ]",
+  "--token[= ]",
+  "(^|\\s)security add-generic-password",
+]
+
+# Commands run inside these directories are never written to history.
+# cwd_filter = [
+#   "^/very/secret/area",
+# ]

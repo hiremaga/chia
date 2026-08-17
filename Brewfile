@@ -19,6 +19,11 @@ cask 'zed'
 
 # App Store apps
 mas 'Kindle', id: 302584613
+mas 'Save to Reader', id: 1640236961
+mas 'Save to Reflect', id: 1590481717
+mas 'WhatsApp', id: 310633997
+# Declared so bundle cleanup leaves Xcode alone; chia.sh exits earlier if it's missing
+mas 'Xcode', id: 497799835
 
 # Modern shell tools
 brew 'mas'
